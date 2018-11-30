@@ -37,6 +37,8 @@ public class BoundsCheck : MonoBehaviour {
         {
             pos.y = -camHeight + radius;
         }
+
+        transform.position=pos;
     }
 
     void OnDrawGizmos()
