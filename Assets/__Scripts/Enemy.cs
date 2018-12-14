@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour {
     public float health = 10;
     public int score = 100;
 
-    private BoundsCheck bndCheck;
+    protected BoundsCheck bndCheck;
 
     public Vector3 pos
     {
@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         Move();
 
         if (bndCheck != null && bndCheck.offDown)
