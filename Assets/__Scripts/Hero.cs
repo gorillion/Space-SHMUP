@@ -94,19 +94,20 @@ public class Hero : MonoBehaviour {
                 break;
 
             default:
-                if(pu.type == weapons[0].type)
+                if (pu.type == weapons[0].type)
                 {
                     Weapon w = GetEmptyWeaponSlot();
-                    if (w !=null)
+                    if (w != null)
                     {
                         w.SetType(pu.type);
                     }
-                    else
-                    {
-                        ClearWeapons();
-                        weapons[0].SetType(pu.type);
-                    }                  
                 }
+                else
+                {
+                    ClearWeapons();
+                    weapons[0].SetType(pu.type);
+                }                  
+                
                 break;
         }
         pu.AbsorbedBy(this.gameObject);
