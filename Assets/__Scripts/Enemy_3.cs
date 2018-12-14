@@ -15,7 +15,7 @@ public class Enemy_3 : Enemy {
 	void Start () {
         points = new Vector3[3];
         points[0] = pos;
-        float xMin = -bndCheck.camWidth +bndCheck.radius;
+        float xMin = -bndCheck.camWidth + bndCheck.radius;
         float xMax = bndCheck.camWidth - bndCheck.radius;
 
         Vector3 v;
@@ -35,7 +35,7 @@ public class Enemy_3 : Enemy {
 
 	public override void Move ()
     {
-        float u = (Time.time - birthTime / lifeTime);
+        float u = (Time.time - birthTime) / lifeTime;
         if (u > 1)
         {
             Destroy(this.gameObject);
@@ -46,5 +46,7 @@ public class Enemy_3 : Enemy {
         p01 = (1 - u) * points[0] + u * points[1];
         p12 = (1 - u) * points[1] + u * points[2];
         pos = (1 - u) * p01 + u * p12;
+        
+        base.Move();
     }
 }
